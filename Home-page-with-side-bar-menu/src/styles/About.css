@@ -1,0 +1,126 @@
+/* General Styles */
+.about {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f3f3f3;
+    /* Light gray background for contrast */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow for depth */
+    transition: all 0.3s ease-in-out;
+}
+
+/* Headings */
+.about h1,
+.about h2 {
+    color: #333;
+    /* Darker color for contrast */
+    margin-bottom: 15px;
+    /* Spacing between headings and content */
+    text-align: center;
+    /* Centered headings */
+}
+
+.about h1 {
+    font-size: 2rem;
+    /* Larger heading */
+    font-weight: 600;
+    /* Slightly bold */
+}
+
+.about h2 {
+    font-size: 1.5rem;
+    /* Subheading size */
+    font-weight: 500;
+    /* Medium weight */
+}
+
+/* Section Styling */
+.about section {
+    margin-bottom: 20px;
+    /* Spacing between sections */
+    padding: 15px;
+    /* Padding within sections */
+    border-radius: 5px;
+    /* Rounded corners */
+    background-color: #fff;
+    /* White background for sections */
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow */
+    transition: all 0.3s ease-in-out;
+}
+
+.about section p {
+    color: #555;
+    /* Dark grey text color for easy readability */
+    line-height: 1.6;
+    /* Improved line height for readability */
+}
+
+/* Hover Effect */
+.about section:hover {
+    transform: translateY(-5px);
+    /* Subtle upward movement */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    /* Stronger shadow on hover */
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .about {
+        padding: 15px;
+        /* Less padding on smaller screens */
+    }
+
+    .about section {
+        padding: 10px;
+        /* Less padding in sections on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+
+    /* Adjustments for phones */
+    .about {
+        padding: 10px;
+    }
+
+    .about h1 {
+        font-size: 1.5rem;
+        /* Smaller heading size for smaller screens */
+    }
+
+    .about h2 {
+        font-size: 1.25rem;
+        /* Smaller subheading size for smaller screens */
+    }
+
+    .about section {
+        padding: 8px;
+        /* Smaller padding in sections */
+    }
+}
+
+@media (max-width: 360px) {
+
+    /* Adjustments for smaller phones and smartwatches */
+    .about {
+        padding: 5px;
+    }
+
+    .about h1 {
+        font-size: 1.25rem;
+        /* Smaller heading size */
+    }
+
+    .about h2 {
+        font-size: 1rem;
+        /* Smaller subheading size */
+    }
+
+    .about section {
+        padding: 5px;
+        /* Smaller padding in sections */
+    }
+}

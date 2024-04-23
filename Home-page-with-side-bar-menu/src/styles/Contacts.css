@@ -1,0 +1,171 @@
+/* General Styles */
+.contacts {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    /* Light background for contrast */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow for depth */
+    transition: all 0.3s ease-in-out;
+}
+
+/* Contact Headings */
+.contacts h1,
+.contacts h2 {
+    color: #333;
+    /* Darker color for contrast */
+    margin-bottom: 20px;
+    /* Spacing between heading and sections */
+    text-align: center;
+    /* Centered headings */
+}
+
+.contacts h1 {
+    font-size: 2rem;
+    /* Larger heading */
+}
+
+.contacts h2 {
+    font-size: 1.5rem;
+    /* Subheading size */
+}
+
+/* Contact Sections */
+.contact-section {
+    margin-bottom: 30px;
+    /* Spacing between sections */
+    padding: 15px;
+    /* Padding within sections */
+    border-radius: 5px;
+    /* Rounded corners */
+    background-color: #fff;
+    /* White background for sections */
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow */
+    transition: all 0.3s ease-in-out;
+}
+
+/* Contact Links */
+.contact-link {
+    color: #007bff;
+    /* Blue link color */
+    text-decoration: none;
+    /* Remove underline */
+    display: flex;
+    /* Align icon and text */
+    align-items: center;
+    justify-content: center;
+    /* Center align the content */
+}
+
+.contact-link:hover {
+    color: #0056b3;
+    /* Darker blue on hover */
+    text-decoration: underline;
+    /* Add underline on hover */
+}
+
+/* Icons */
+.contact-link i {
+    margin-right: 8px;
+    /* Space between icon and text */
+    font-size: 1.5rem;
+    /* Icon size */
+}
+
+/* Hover Effect */
+.contact-section:hover {
+    transform: translateY(-5px);
+    /* Subtle upward movement */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    /* Stronger shadow on hover */
+}
+
+/* Responsive Styling */
+@media (max-width: 1200px) {
+    .contacts {
+        padding: 15px;
+    }
+
+    .contact-section {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* Adjustments for tablets */
+    .contacts {
+        padding: 10px;
+    }
+
+    .contact-section {
+        padding: 8px;
+        margin-bottom: 20px;
+    }
+
+    .contact-link i {
+        margin-right: 6px;
+        /* Reduce space between icon and text */
+        font-size: 1.25rem;
+        /* Smaller icon size */
+    }
+}
+
+@media (max-width: 480px) {
+
+    /* Adjustments for phones */
+    .contacts {
+        padding: 5px;
+    }
+
+    .contact-section {
+        padding: 5px;
+    }
+
+    .contact-link {
+        font-size: 0.9rem;
+        /* Smaller font size */
+    }
+
+    .contact-link i {
+        margin-right: 4px;
+        /* Reduce space between icon and text */
+        font-size: 1rem;
+        /* Smaller icon size */
+    }
+}
+
+@media (max-width: 360px) {
+
+    /* Adjustments for smaller phones and smartwatches */
+    .contacts {
+        padding: 2px;
+    }
+
+    .contact-section {
+        padding: 3px;
+    }
+
+    .contact-link {
+        font-size: 0.8rem;
+        /* Smaller font size */
+    }
+
+    .contact-link i {
+        margin-right: 2px;
+        /* Reduce space between icon and text */
+        font-size: 0.8rem;
+        /* Smaller icon size */
+    }
+}
+
+/* Style adjustments for TVs and larger screens */
+@media (min-width: 1200px) {
+    .contacts {
+        padding: 25px;
+        /* More generous padding */
+    }
+}

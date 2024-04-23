@@ -1,0 +1,156 @@
+/* General Styles */
+.home {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f7f7f7;
+    /* Light background for contrast */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow for depth */
+    transition: all 0.3s ease-in-out;
+}
+
+/* Headings */
+.home h1,
+.home h2 {
+    color: #333;
+    /* Darker color for contrast */
+    margin-bottom: 15px;
+    /* Spacing between headings and content */
+    text-align: center;
+    /* Centered headings */
+}
+
+.home h1 {
+    font-size: 2.5rem;
+    /* Larger font size for hero heading */
+    font-weight: 700;
+    /* Bold font weight for emphasis */
+}
+
+.home h2 {
+    font-size: 1.5rem;
+    /* Subheading size */
+    font-weight: 600;
+    /* Semi-bold weight */
+}
+
+/* Section Styling */
+.home section {
+    margin-bottom: 25px;
+    /* Spacing between sections */
+    padding: 20px;
+    /* Padding within sections */
+    border-radius: 8px;
+    /* Rounded corners */
+    background-color: #fff;
+    /* White background for sections */
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow */
+    transition: all 0.3s ease-in-out;
+}
+
+.home section p {
+    color: #555;
+    /* Dark grey text color for easy readability */
+    line-height: 1.6;
+    /* Improved line height for readability */
+}
+
+/* Button Styles */
+.cta-button {
+    display: block;
+    margin: 20px auto;
+    /* Center button with margin */
+    padding: 10px 20px;
+    /* Padding for comfortable click area */
+    border: none;
+    /* Remove default border */
+    border-radius: 5px;
+    /* Rounded corners */
+    background-color: #007bff;
+    /* Blue background */
+    color: #fff;
+    /* White text color */
+    font-weight: 600;
+    /* Bold font weight */
+    cursor: pointer;
+    /* Cursor change on hover */
+    transition: background-color 0.3s ease-in-out;
+}
+
+.cta-button:hover {
+    background-color: #0056b3;
+    /* Darker blue on hover */
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    /* Center text in hero section */
+    padding: 30px;
+    /* Extra padding for emphasis */
+    background-color: #e7f5ff;
+    /* Light blue background for emphasis */
+    border-radius: 8px;
+    /* Rounded corners */
+}
+
+.hero p {
+    font-size: 1.2rem;
+    /* Slightly larger font size */
+    font-weight: 500;
+    /* Semi-bold font weight */
+    margin-bottom: 0;
+    /* Remove bottom margin */
+}
+
+/* Hover Effect */
+.home section:hover {
+    transform: translateY(-5px);
+    /* Subtle upward movement */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    /* Stronger shadow on hover */
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .home {
+        padding: 15px;
+    }
+
+    .home section {
+        padding: 15px;
+    }
+
+    .cta-button {
+        padding: 8px 16px;
+        /* Adjust button padding */
+    }
+}
+
+@media (max-width: 480px) {
+
+    /* Adjustments for phones */
+    .home {
+        padding: 10px;
+    }
+
+    .home h1 {
+        font-size: 2rem;
+        /* Smaller hero heading */
+    }
+
+    .home h2 {
+        font-size: 1.25rem;
+        /* Smaller subheading */
+    }
+
+    .cta-button {
+        padding: 8px 12px;
+        /* Adjust button padding */
+        font-size: 0.9rem;
+        /* Smaller font size */
+    }
+}
