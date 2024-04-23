@@ -6,20 +6,41 @@ function Sidebar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleSidebar = () => {
-    setIsOpen(!isOpen);
+    setIsOpen((prevState) => !prevState);
+  };
+
+  const closeSidebar = () => {
+    setIsOpen(false);
   };
 
   return (
     <>
-      <button className="menu-icon" onClick={toggleSidebar}>
+      {/* Menu Icon Button */}
+      <button
+        className="menu-icon"
+        onClick={toggleSidebar}
+        aria-label="Toggle sidebar"
+      >
         &#9776;
       </button>
-      <div className={`sidebar ${isOpen ? 'open' : 'closed'}`}>
-        <Link to="/" onClick={toggleSidebar}>Home</Link>
-        <Link to="/about" onClick={toggleSidebar}>About</Link>
-        <Link to="/contacts" onClick={toggleSidebar}>Contact</Link>
-      </div>
-      <div className={`overlay ${isOpen ? 'show' : ''}`} onClick={toggleSidebar}></div>
+
+      {/* Sidebar Navigation */}
+      <nav className={`sidebar ${isOpen ? 'open' : 'closed'}`}>
+        <Link to="/" onClick={closeSidebar}>
+          Home
+        </Link>
+        <Link to="/about" onClick={closeSidebar}>
+          About
+        </Link>
+        <Link to="/contacts" onClick={closeSidebar}>
+          Contact
+        </Link>
+      </nav>
+
+      {/* Overlay */}
+      {isOpen && (
+        <div className="overlay" onClick={closeSidebar} aria-hidden="true" />
+      )}
     </>
   );
 }
