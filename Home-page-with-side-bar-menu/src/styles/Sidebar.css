@@ -1,74 +1,88 @@
-.menu-icon {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    background: #080111;
-    color: rgb(250, 251, 252);
-    border: none;
-    border-radius: 5px;
-    padding: 10px;
-    z-index: 1001;
-    cursor: pointer;
-}
-
+/* General Styles */
 .sidebar {
-    height: 100%;
-    width: 250px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: rgb(51, 69, 71);
-    overflow-x: hidden;
-    transition: transform 0.5s ease;
-    transform: translateX(-100%);
-    z-index: 1000;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 250px;
+  background-color: #1e1f29; /* Dark blue color */
+  color: #f0f0f0; /* Light color for text */
+  overflow-x: hidden;
+  transition: transform 0.3s ease-in-out, width 0.3s ease-in-out; /* Smooth transition */
+  transform: translateX(-100%); /* Initially hide sidebar */
+  z-index: 1000; /* High z-index to overlap content */
+  box-shadow: 4px 0 8px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+  /* Add a blur effect to the sidebar for modern design */
+  backdrop-filter: blur(8px);
 }
 
+/* Sidebar open state */
 .sidebar.open {
-    transform: translateX(0);
+  transform: translateX(0); /* Show sidebar */
 }
 
+/* Sidebar Links */
 .sidebar a {
-    padding: 10px 15px;
-    text-decoration: none;
-    font-size: 20px;
-    color: white;
-    display: block;
-    transition: color 0.3s;
+  display: block; /* Block elements for full width */
+  padding: 15px 20px; /* Padding for links */
+  color: inherit; /* Inherit text color */
+  text-decoration: none; /* No underline */
+  font-weight: bold; /* Bold font weight */
+  transition: background-color 0.3s, padding-left 0.3s, box-shadow 0.3s; /* Smooth transitions */
+  /* Add a gradient effect on hover */
+  background: linear-gradient(45deg, transparent, rgba(0, 198, 255, 0.2));
 }
 
+/* Hover effect for links */
 .sidebar a:hover {
-    color: #f1f1f1;
+  padding-left: 25px; /* Indent on hover */
+  /* Glow effect using text shadow */
+  text-shadow: 0 0 10px #00c6ff;
+  /* Add a subtle glow effect around the link */
+  box-shadow: inset 0 0 10px #00c6ff;
 }
 
+/* Menu Icon Button */
+.menu-icon {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  z-index: 2000; /* High z-index to overlap content */
+  font-size: 2rem; /* Large font size */
+  color: #00c6ff; /* Bright blue color */
+  background-color: transparent; /* Transparent background */
+  border: none; /* No border */
+  cursor: pointer; /* Pointer cursor */
+  outline: none; /* Remove default focus outline */
+  /* Add a hover effect for the menu icon */
+  transition: color 0.3s;
+}
+
+.menu-icon:hover {
+  color: #0088cc; /* Darker blue color on hover */
+}
+
+/* Overlay Styles */
 .overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 999;
-    cursor: pointer;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+  z-index: 999; /* High z-index to overlap content */
+  transition: opacity 0.3s ease-in-out; /* Smooth transition */
 }
 
-.overlay.show {
-    display: block;
-}
-
+/* Responsive Design */
 @media (max-width: 768px) {
-    .sidebar {
-        width: 200px;
-    }
-
-    .menu-icon {
-        padding: 8px;
-        font-size: 28px;
-    }
-
-    .sidebar a {
-        font-size: 18px;
-    }
+  .sidebar {
+    width: 200px; /* Reduce sidebar width */
+  }
+  
+  /* Adjust padding and font size for links */
+  .sidebar a {
+    padding: 12px 15px;
+    font-size: 1rem;
+  }
 }
