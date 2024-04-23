@@ -1,88 +1,137 @@
 /* General Styles */
 .sidebar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 250px;
-  background-color: #1e1f29; /* Dark blue color */
-  color: #f0f0f0; /* Light color for text */
-  overflow-x: hidden;
-  transition: transform 0.3s ease-in-out, width 0.3s ease-in-out; /* Smooth transition */
-  transform: translateX(-100%); /* Initially hide sidebar */
-  z-index: 1000; /* High z-index to overlap content */
-  box-shadow: 4px 0 8px rgba(0, 0, 0, 0.3); /* Subtle shadow */
-  /* Add a blur effect to the sidebar for modern design */
-  backdrop-filter: blur(8px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 250px;
+    background-color: #1a1c2c;
+    /* Dark blue background */
+    color: #f5f5f5;
+    /* Light text color */
+    overflow-x: hidden;
+    transform: translateX(-100%);
+    transition: transform 0.4s ease-in-out;
+    /* Smooth transition */
+    z-index: 1000;
+    box-shadow: 4px 0 8px rgba(0, 0, 0, 0.4);
+    /* Subtle shadow */
 }
 
 /* Sidebar open state */
 .sidebar.open {
-  transform: translateX(0); /* Show sidebar */
+    transform: translateX(0);
 }
 
 /* Sidebar Links */
 .sidebar a {
-  display: block; /* Block elements for full width */
-  padding: 15px 20px; /* Padding for links */
-  color: inherit; /* Inherit text color */
-  text-decoration: none; /* No underline */
-  font-weight: bold; /* Bold font weight */
-  transition: background-color 0.3s, padding-left 0.3s, box-shadow 0.3s; /* Smooth transitions */
-  /* Add a gradient effect on hover */
-  background: linear-gradient(45deg, transparent, rgba(0, 198, 255, 0.2));
+    display: block;
+    padding: 14px 24px;
+    /* More generous padding */
+    margin: 10px 0;
+    /* Space between links */
+    color: inherit;
+    text-decoration: none;
+    font-weight: 600;
+    /* Semi-bold font */
+    border-radius: 8px;
+    /* Rounded corners */
+    transition: background-color 0.3s, box-shadow 0.3s;
+    /* Smooth transitions */
 }
 
-/* Hover effect for links */
+/* Link Hover Effect */
 .sidebar a:hover {
-  padding-left: 25px; /* Indent on hover */
-  /* Glow effect using text shadow */
-  text-shadow: 0 0 10px #00c6ff;
-  /* Add a subtle glow effect around the link */
-  box-shadow: inset 0 0 10px #00c6ff;
+    background-color: #283046;
+    /* Dark blue hover color */
+    box-shadow: inset 0 0 10px #00d9ff;
+    /* Inner blue glow */
 }
 
 /* Menu Icon Button */
 .menu-icon {
-  position: fixed;
-  top: 15px;
-  left: 15px;
-  z-index: 2000; /* High z-index to overlap content */
-  font-size: 2rem; /* Large font size */
-  color: #00c6ff; /* Bright blue color */
-  background-color: transparent; /* Transparent background */
-  border: none; /* No border */
-  cursor: pointer; /* Pointer cursor */
-  outline: none; /* Remove default focus outline */
-  /* Add a hover effect for the menu icon */
-  transition: color 0.3s;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    font-size: 2rem;
+    /* Large icon size */
+    color: #00d9ff;
+    /* Bright blue color */
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    /* Remove focus outline */
+    transition: color 0.3s, transform 0.3s;
+    /* Smooth transitions */
 }
 
+/* Menu Icon Hover Effect */
 .menu-icon:hover {
-  color: #0088cc; /* Darker blue color on hover */
+    color: #00b6e5;
+    /* Slightly darker blue on hover */
+    transform: rotate(90deg);
+    /* Rotation effect */
 }
 
 /* Overlay Styles */
 .overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 100vw;
-  background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
-  z-index: 999; /* High z-index to overlap content */
-  transition: opacity 0.3s ease-in-out; /* Smooth transition */
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.6);
+    /* Dark overlay */
+    z-index: 999;
+
+    opacity: $ {
+        ({
+            isOpen
+        })=>(isOpen ? '1' : '0')
+}
+
+;
+
+/* Control opacity */
+visibility: $ {
+    ({
+        isOpen
+    })=>(isOpen ? 'visible' : 'hidden')
+}
+
+;
+/* Control visibility */
+transition: opacity 0.3s ease-in-out;
+}
+
+/* Improved Sidebar Links with icon and hover effects */
+.sidebar a:hover::before {
+    content: '• ';
+    color: #00d9ff;
+    /* Bright blue dot */
+    margin-right: 8px;
+}
+
+.sidebar a:hover::after {
+    content: '➔';
+    margin-left: 8px;
+    color: #00d9ff;
+    /* Bright blue arrow */
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .sidebar {
-    width: 200px; /* Reduce sidebar width */
-  }
-  
-  /* Adjust padding and font size for links */
-  .sidebar a {
-    padding: 12px 15px;
-    font-size: 1rem;
-  }
+    .sidebar {
+        width: 200px;
+        /* Adjust width for mobile */
+        padding: 10px;
+    }
+
+    .sidebar a {
+        padding: 12px 18px;
+        /* Adjust padding */
+        font-size: 0.9rem;
+        /* Adjust font size */
+    }
 }
