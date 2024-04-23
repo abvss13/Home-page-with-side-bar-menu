@@ -1,0 +1,52 @@
+.menu-icon {
+    position: fixed;
+    top: 20px;
+    /* Adjust positioning as needed */
+    left: 20px;
+    background: none;
+    border: none;
+    font-size: 30px;
+    /* Adjust icon size as needed */
+    cursor: pointer;
+    z-index: 1001;
+    /* Make sure it's above other content */
+}
+
+.sidebar {
+    height: 100%;
+    width: 250px;
+    /* Adjust width as needed */
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    /* Smooth sliding effect */
+    transform: translateX(-100%);
+    /* Start off-screen */
+    z-index: 1000;
+}
+
+.sidebar.open {
+    transform: translateX(0);
+    /* Slide in */
+}
+
+.sidebar.closed {
+    transform: translateX(-100%);
+    /* Slide out */
+}
+
+.sidebar a {
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 25px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    color: #f1f1f1;
+}
